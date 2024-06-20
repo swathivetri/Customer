@@ -1,0 +1,41 @@
+ Create an Account
+POST http://localhost:3000/api/accounts
+Content-Type: application/json
+
+{
+  "email": "swathiram@customerLabs.com",
+  "name": "swathiram",
+  "website": "http://customerLabs.com"
+}
+
+ Create a Destination
+POST http://localhost:3000/api/destinations
+Content-Type: application/json
+
+{
+  "accountId": 1,
+  "url": "http://destination.com",
+  "httpMethod": "POST",
+  "headers": {
+    "APP_ID": "1234APPID1234",
+    "APP_SECRET": "enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s",
+    "ACTION": "user.update",
+    "Content-Type": "application/json",
+    "Accept": "yes"
+  }
+}
+
+ Get Destinations for an Account
+GET http://localhost:3000/api/accounts/1/destinations
+
+ Handle Incoming Data
+POST http://localhost:3000/api/server/incoming_data
+Content-Type: application/json
+CL-X-TOKEN: b00cae1a-921b-4fd0-84db-19c048c1e06e
+
+{
+  "user": {
+    "id": "1",
+    "name": "swathiram"
+  }
+}
